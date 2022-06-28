@@ -1,0 +1,30 @@
+{
+	"name": "@osbjs/hitobjects-tiny-osbjs",
+	"version": "1.0.0-a",
+	"description": "Hit objects parser for tiny-osbjs.",
+	"main": "dist/cjs/index.js",
+	"module": "dist/es/index.js",
+	"scripts": {
+		"build": "rollup -c"
+	},
+	"keywords": [
+		"osbjs",
+		"osb",
+		"osu",
+		"hit objects parser"
+	],
+	"author": "Nanachi",
+	"license": "MIT",
+	"peerDependencies": {
+		"@osbjs/tiny-osbjs": "^1.9.1"
+	},
+	"devDependencies": {
+		"prettier": "^2.7.1",
+		"prettier-plugin-organize-imports": "^3.0.0",
+		"rollup": "^2.75.7",
+		"rollup-plugin-ts": "^3.0.2",
+		"ts-node": "^10.8.1",
+		"tsconfig-paths": "^4.0.0",
+		"typescript": "^4.7.4"
+	}
+}
