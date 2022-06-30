@@ -1,4 +1,4 @@
-import { lengthVec, subVec, Vector2 } from '@osbjs/tiny-osbjs'
+import { cloneVec, lengthVec, subVec, Vector2 } from '@osbjs/tiny-osbjs'
 import { OsuPixel } from 'types/OsuPixel'
 import { Segment } from 'types/Segment'
 
@@ -31,7 +31,7 @@ export function createBezierSegments(points: Vector2[], visualLength: OsuPixel):
 }
 
 function getPositionAtDelta(delta: number, points: Vector2[]): Vector2 {
-	let intermediatePoints = points.map((point): Vector2 => ({ x: point.x, y: point.y }))
+	let intermediatePoints = points.map((point): Vector2 => cloneVec(point))
 
 	for (let i = 1; i < points.length; i++)
 		for (let j = 0; j < points.length - i; j++) {
