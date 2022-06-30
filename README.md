@@ -67,7 +67,25 @@ Get all beatmap hitobjects.
 
 ### Finding hit object
 ```ts
-function findCircleAtTime(time: number, circles: Circle[], maxAcceptableOffset: number = 5): Circle | undefined
-function findSliderAtTime(time: number, sliders: Slider[], maxAcceptableOffset: number = 5): Slider | undefined
+function findCircleAtTime(
+	time: number, 
+	circles: Circle[], 
+	maxAcceptableOffset: number = 5
+): Circle | undefined
+function findSliderAtTime(
+	time: number, 
+	sliders: Slider[], 
+	maxAcceptableOffset: number = 5
+): Slider | undefined
 ```
 Get the circle/slider at a specific timestamp.
+
+```ts
+export function filterHitObjectsInPeriod(
+	startTime: number,
+	endTime: number,
+	hitobjects: HitObjects,
+	maxAcceptableOffset: number = 5
+): HitObjects
+```
+Returns hitobjects in a specific period.
