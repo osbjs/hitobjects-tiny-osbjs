@@ -1,6 +1,6 @@
 {
 	"name": "@osbjs/hitobjects-tiny-osbjs",
-	"version": "1.1.1",
+	"version": "1.1.2",
 	"description": "Hit objects parser for tiny-osbjs.",
 	"main": "dist/cjs/index.js",
 	"module": "dist/es/index.js",
