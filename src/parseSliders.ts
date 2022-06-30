@@ -1,15 +1,12 @@
-import { Vector2 } from '@osbjs/tiny-osbjs'
+import { addVec, Vector2 } from '@osbjs/tiny-osbjs'
 import { createSlider } from 'createSlider'
-import { parseSliderMultiplier } from 'parseSliderMultiplier'
 import { parseTimingPoints } from 'parseTimingPoints'
 import { CurveType } from 'types/CurveType'
 import { Slider } from 'types/Slider'
 import { PlayfieldToStoryboardOffset } from 'utils/PlayfieldToStoryboardOffset'
-import { addVec } from '@osbjs/tiny-osbjs'
 
-export function parseSliders(rawHitObjs: string): Slider[] {
+export function parseSliders(rawHitObjs: string, beatMultiplier: number): Slider[] {
 	const timingPoints = parseTimingPoints(rawHitObjs)
-	const beatMultiplier = parseSliderMultiplier(rawHitObjs)
 
 	const sliders: Slider[] = []
 

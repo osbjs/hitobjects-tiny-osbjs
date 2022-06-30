@@ -1,5 +1,6 @@
 import { readFileSync } from 'fs'
 import { parseCircles } from 'parseCircles'
+import { parseSliderMultiplier } from 'parseSliderMultiplier'
 import { parseSliders } from 'parseSliders'
 import { HitObjects } from 'types/HitObjects'
 
@@ -17,7 +18,8 @@ export function loadBeatmapHitobjects(filepath: string): HitObjects {
 
 	if (!rawHitObjs) return { sliders: [], circles: [] }
 
-	const sliders = parseSliders(rawHitObjs)
+	const beatMultiplier = parseSliderMultiplier(rawHitObjs)
+	const sliders = parseSliders(rawHitObjs, beatMultiplier)
 	const circles = parseCircles(rawHitObjs)
 
 	return { sliders, circles }
