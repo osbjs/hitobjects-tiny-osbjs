@@ -1,6 +1,6 @@
 import { Circle } from 'types/Circle'
 import { PlayfieldToStoryboardOffset } from 'utils/PlayfieldToStoryboardOffset'
-import { addVec } from 'utils/Vector2Math'
+import { addVec } from '@osbjs/tiny-osbjs'
 
 export function parseCircles(rawHitObjs: string): Circle[] {
 	const circles: Circle[] = []

@@ -1,6 +1,5 @@
-import { Vector2 } from '@osbjs/tiny-osbjs'
+import { lengthSqrVec, subVec, Vector2 } from '@osbjs/tiny-osbjs'
 import { Segment } from 'types/Segment'
-import { lengthSqrVec, subVec } from 'utils/Vector2Math'
 
 export function createCircleSegments(points: Vector2[]): Segment[] {
 	const startPoint = points[0],

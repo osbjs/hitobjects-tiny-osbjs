@@ -5,7 +5,7 @@ import { parseTimingPoints } from 'parseTimingPoints'
 import { CurveType } from 'types/CurveType'
 import { Slider } from 'types/Slider'
 import { PlayfieldToStoryboardOffset } from 'utils/PlayfieldToStoryboardOffset'
-import { addVec } from 'utils/Vector2Math'
+import { addVec } from '@osbjs/tiny-osbjs'
 
 export function parseSliders(rawHitObjs: string): Slider[] {
 	const timingPoints = parseTimingPoints(rawHitObjs)

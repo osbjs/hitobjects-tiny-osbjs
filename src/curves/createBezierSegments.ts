@@ -1,7 +1,6 @@
-import { Vector2 } from '@osbjs/tiny-osbjs'
+import { lengthVec, subVec, Vector2 } from '@osbjs/tiny-osbjs'
 import { OsuPixel } from 'types/OsuPixel'
 import { Segment } from 'types/Segment'
-import { lengthVec, subVec } from 'utils/Vector2Math'
 
 export function createBezierSegments(points: Vector2[], visualLength: OsuPixel): Segment[] {
 	const startPoint = points[0],

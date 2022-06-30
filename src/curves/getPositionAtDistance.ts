@@ -1,7 +1,6 @@
-import { Vector2 } from '@osbjs/tiny-osbjs'
+import { addVec, mulVecScalar, subVec, Vector2 } from '@osbjs/tiny-osbjs'
 import { OsuPixel } from 'types/OsuPixel'
 import { Segment } from 'types/Segment'
-import { addVec, mulVecScalar, subVec } from 'utils/Vector2Math'
 
 export function getPositionAtDistance(distance: OsuPixel, segments: Segment[]): Vector2 {
 	if (distance >= segments[segments.length - 1].distance) return segments[segments.length - 1].position
