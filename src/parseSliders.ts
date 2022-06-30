@@ -24,7 +24,7 @@ export function parseSliders(rawHitObjs: string, beatMultiplier: number, timingP
 				.slice(1)
 				.map((cp): Vector2 => addVec({ x: parseInt(cp.split(':')[0]), y: parseInt(cp.split(':')[1]) }, PlayfieldToStoryboardOffset))
 
-			const points = [{ x: parseInt(sAttr[0]), y: parseInt(sAttr[1]) }, ...curvePoints]
+			const points = [addVec({ x: parseInt(sAttr[0]), y: parseInt(sAttr[1]) }, PlayfieldToStoryboardOffset), ...curvePoints]
 
 			const repeatCount = parseInt(sAttr[6])
 			const visualLength = parseInt(sAttr[7])
