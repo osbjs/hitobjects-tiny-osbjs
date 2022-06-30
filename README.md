@@ -46,6 +46,7 @@ sliders.forEach((slider) => {
 ```
 
 ## API documentation
+### loadBeatmapHitobjects
 ```ts
 function loadBeatmapHitobjects(filepath: string): HitObjects
 type HitObjects = {
@@ -63,3 +64,10 @@ type Circle = {
 }
 ```
 Get all beatmap hitobjects.
+
+### Finding hit object
+```ts
+function findCircleAtTime(time: number, circles: Circle[], maxAcceptableOffset: number = 5): Circle | undefined
+function findSliderAtTime(time: number, sliders: Slider[], maxAcceptableOffset: number = 5): Slider | undefined
+```
+Get the circle/slider at a specific timestamp.
