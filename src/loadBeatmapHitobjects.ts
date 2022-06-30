@@ -18,7 +18,7 @@ export function loadBeatmapHitobjects(filepath: string): HitObjects {
 
 	if (!rawHitObjs) return { sliders: [], circles: [] }
 
-	const beatMultiplier = parseSliderMultiplier(rawHitObjs)
+	const beatMultiplier = parseSliderMultiplier(raw)
 	const sliders = parseSliders(rawHitObjs, beatMultiplier)
 	const circles = parseCircles(rawHitObjs)
 
