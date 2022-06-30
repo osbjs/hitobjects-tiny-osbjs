@@ -11,7 +11,7 @@ export function loadBeatmapHitobjects(filepath: string): HitObjects {
 	const raw = readFileSync(filepath, 'utf-8')
 
 	const rawHitObjs = raw
-		.match(/(?<=\[HitObjects]\n)(.+\n?)+/g)
+		.match(/(?<=\[HitObjects]\r?\n)(.+\r?\n?)+/g)
 		?.toString()
 		.trim()
 

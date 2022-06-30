@@ -2,7 +2,7 @@ import { TimingPoint } from 'types/TimingPoint'
 
 export function parseTimingPoints(raw: string): TimingPoint[] {
 	let match = raw
-		.match(/(?<=\[TimingPoints]\n)(-?\d+,-?\d+\.?\d*,\d+,\d+,\d+,\d+,\d+,\d+\n)+/g)
+		.match(/(?<=\[TimingPoints]\r?\n)(.+\r?\n?)+/g)
 		?.toString()
 		.match(/-?\d+,-?\d+\.?\d*,\d+,\d+,\d+,\d+,\d+,\d+/g)
 
