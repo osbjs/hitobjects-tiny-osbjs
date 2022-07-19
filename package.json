@@ -28,6 +28,7 @@
 		"@osbjs/tiny-osbjs": "^2.0.0"
 	},
 	"devDependencies": {
+		"@types/node": "18.0.6",
 		"@osbjs/tiny-osbjs": "^2.0.0",
 		"prettier": "^2.7.1",
 		"prettier-plugin-organize-imports": "^3.0.0",

@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@osbjs/tiny-osbjs': ^2.0.0
+  '@types/node': 18.0.6
   prettier: ^2.7.1
   prettier-plugin-organize-imports: ^3.0.0
   rollup: ^2.75.7
@@ -11,6 +12,7 @@ specifiers:
 
 devDependencies:
   '@osbjs/tiny-osbjs': 2.0.0
+  '@types/node': 18.0.6
   prettier: 2.7.1
   prettier-plugin-organize-imports: 3.0.0_gd3y7r3s3evy6b2vthd7dmacga
   rollup: 2.77.0
