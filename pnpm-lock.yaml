@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@osbjs/tiny-osbjs': ^2.0.0
+  '@osbjs/tiny-osbjs': ^3.0.0
   '@types/node': 18.0.6
   prettier: ^2.7.1
   prettier-plugin-organize-imports: ^3.0.0
@@ -11,7 +11,7 @@ specifiers:
   typescript: ^4.7.4
 
 devDependencies:
-  '@osbjs/tiny-osbjs': 2.0.0
+  '@osbjs/tiny-osbjs': 3.0.0
   '@types/node': 18.0.6
   prettier: 2.7.1
   prettier-plugin-organize-imports: 3.0.0_gd3y7r3s3evy6b2vthd7dmacga
@@ -49,8 +49,8 @@ packages:
     resolution: {integrity: sha512-EWUguj2kd7ldmrF9F+vI5hUOralPd+sdsUnYbRy33vZTuZkduC1shE9TtEMEjAQwyfyMb4ole5KtjF8MsnQOlA==}
     dev: true
 
-  /@osbjs/tiny-osbjs/2.0.0:
-    resolution: {integrity: sha512-pHTzhk3TQu1YjvZyEogFDMym92/ALIeQgauQHWBbCRVURd8oDT8ZgMSG8LS7X2NHisOs3IaEVAERa1dQleR4Bw==}
+  /@osbjs/tiny-osbjs/3.0.0:
+    resolution: {integrity: sha512-AfLQUJAjo+IC17ri0gF+Kl9/a8brTVqowlv2CYy7HpevfX2egNmDisD6te3oLX33oYfrZzx69B7xfWZ5Ny5+Jg==}
     dev: true
 
   /@rollup/pluginutils/4.2.1:

@@ -44,8 +44,5 @@ function getPointPositionAtDelta(delta: number, p1: number, p2: number, p3: numb
 }
 
 function getPositionAtDelta(delta: number, p1: Vector2, p2: Vector2, p3: Vector2, p4: Vector2): Vector2 {
-	return {
-		x: getPointPositionAtDelta(p1.x, p2.x, p3.x, p4.x, delta),
-		y: getPointPositionAtDelta(p1.y, p2.y, p3.y, p4.y, delta),
-	}
+	return [getPointPositionAtDelta(p1[0], p2[0], p3[0], p4[0], delta), getPointPositionAtDelta(p1[1], p2[1], p3[1], p4[1], delta)]
 }

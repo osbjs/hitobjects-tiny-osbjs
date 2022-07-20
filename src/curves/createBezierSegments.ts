@@ -35,10 +35,10 @@ function getPositionAtDelta(delta: number, points: Vector2[]): Vector2 {
 
 	for (let i = 1; i < points.length; i++)
 		for (let j = 0; j < points.length - i; j++) {
-			intermediatePoints[j] = {
-				x: intermediatePoints[j].x * (1 - delta) + intermediatePoints[j + 1].x * delta,
-				y: intermediatePoints[j].y * (1 - delta) + intermediatePoints[j + 1].y * delta,
-			}
+			intermediatePoints[j] = [
+				intermediatePoints[j][0] * (1 - delta) + intermediatePoints[j + 1][0] * delta,
+				intermediatePoints[j][1] * (1 - delta) + intermediatePoints[j + 1][1] * delta,
+			]
 		}
 
 	return intermediatePoints[0]

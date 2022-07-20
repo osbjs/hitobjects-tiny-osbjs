@@ -6,19 +6,25 @@ export function createCircleSegments(points: Vector2[]): Segment[] {
 		midPoint = points[1],
 		endPoint = points[2]
 
-	const d = 2 * (startPoint.x * (midPoint.y - endPoint.y) + midPoint.x * (endPoint.y - startPoint.y) + endPoint.x * (startPoint.y - midPoint.y))
+	const d =
+		2 * (startPoint[0] * (midPoint[1] - endPoint[1]) + midPoint[0] * (endPoint[1] - startPoint[1]) + endPoint[0] * (startPoint[1] - midPoint[1]))
 
-	// prettier-ignore
-	const center: Vector2 = {
-		x: (lengthSqrVec(startPoint) * (midPoint.y - endPoint.y) + lengthSqrVec(midPoint) * (endPoint.y - startPoint.y) + lengthSqrVec(endPoint) * (startPoint.y - midPoint.y)) / d,
-		y: (lengthSqrVec(startPoint) * (endPoint.x - midPoint.x) + lengthSqrVec(midPoint) * (startPoint.x - endPoint.x) + lengthSqrVec(endPoint) * (midPoint.x - startPoint.x)) / d,
-	}
+	const center: Vector2 = [
+		(lengthSqrVec(startPoint) * (midPoint[1] - endPoint[1]) +
+			lengthSqrVec(midPoint) * (endPoint[1] - startPoint[1]) +
+			lengthSqrVec(endPoint) * (startPoint[1] - midPoint[1])) /
+			d,
+		(lengthSqrVec(startPoint) * (endPoint[0] - midPoint[0]) +
+			lengthSqrVec(midPoint) * (startPoint[0] - endPoint[0]) +
+			lengthSqrVec(endPoint) * (midPoint[0] - startPoint[0])) /
+			d,
+	]
 
 	const radius = lengthSqrVec(subVec(startPoint, center))
 
-	let startAngle = Math.atan2(startPoint.y - center.y, startPoint.x - center.x)
-	let midAngle = Math.atan2(midPoint.y - center.y, midPoint.x - center.x)
-	let endAngle = Math.atan2(endPoint.y - center.y, endPoint.x - center.x)
+	let startAngle = Math.atan2(startPoint[1] - center[1], startPoint[0] - center[0])
+	let midAngle = Math.atan2(midPoint[1] - center[1], midPoint[0] - center[0])
+	let endAngle = Math.atan2(endPoint[1] - center[1], endPoint[0] - center[0])
 
 	while (midAngle < startAngle) midAngle += 2 * Math.PI
 	while (endAngle < startAngle) endAngle += 2 * Math.PI
@@ -34,7 +40,7 @@ export function createCircleSegments(points: Vector2[]): Segment[] {
 		const progress = i / segmentCount
 		const angle = endAngle * progress + startAngle * (1 - progress)
 
-		const position: Vector2 = { x: Math.cos(angle) * radius + center.x, y: Math.sin(angle) * radius + center.y }
+		const position: Vector2 = [Math.cos(angle) * radius + center[0], Math.sin(angle) * radius + center[1]]
 
 		segments.push({ distance: progress * length, position })
 	}
@@ -52,10 +58,14 @@ export function isValidCircleCurve(points: Vector2[]): boolean {
 		endPoint = points[2]
 
 	return (
-		startPoint.x != midPoint.x &&
-		startPoint.y != midPoint.y &&
-		midPoint.x != endPoint.x &&
-		midPoint.y != endPoint.y &&
-		2 * (startPoint.x * (midPoint.y - endPoint.y) + midPoint.x * (endPoint.y - startPoint.y) + endPoint.x * (startPoint.y - midPoint.y)) != 0
+		startPoint[0] != midPoint[0] &&
+		startPoint[1] != midPoint[1] &&
+		midPoint[0] != endPoint[0] &&
+		midPoint[1] != endPoint[1] &&
+		2 *
+			(startPoint[0] * (midPoint[1] - endPoint[1]) +
+				midPoint[0] * (endPoint[1] - startPoint[1]) +
+				endPoint[0] * (startPoint[1] - midPoint[1])) !=
+			0
 	)
 }
