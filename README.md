@@ -23,13 +23,13 @@ circles.forEach((circle) => {
 const timestep = 300
 
 sliders.forEach((slider) => {
-	createSprite('ring.png', 'Background', 'Centre', slider.positionAtTime(slider.startTime), () => {
-		fade(slider.startTime, slider.startTime + 100, 1, 0)
-		scale(slider.startTime, slider.startTime + 100, 0, 1)
+	createSprite('ring.png', Layer.Background, Origin.Centre, slider.positionAtTime(slider.startTime), () => {
+		fade([slider.startTime, slider.startTime + 100], 1, 0)
+		scale([slider.startTime, slider.startTime + 100], 0, 1)
 	})
 
-	createSprite('beam.png', 'Background', 'Centre', slider.positionAtTime(slider.startTime), () => {
-		fade(slider.startTime, slider.endTime, 1, 0)
+	createSprite('beam.png', Layer.Background, Origin.Centre, slider.positionAtTime(slider.startTime), () => {
+		fade([slider.startTime, slider.endTime], 1, 0)
 
 		const startTime = slider.startTime
 		const totalStep = Math.round((slider.endTime - slider.startTime) / timestep)
@@ -39,7 +39,7 @@ sliders.forEach((slider) => {
 			const endTime = startTime + timestep * (i + 1)
 			const startPosition = slider.positionAtTime(prevEndTime)
 			const endPosition = slider.positionAtTime(endTime)
-			move(prevEndTime, endTime, startPosition, endPosition)
+			move([prevEndTime, endTime], startPosition, endPosition)
 		}
 	})
 })
