@@ -81,7 +81,7 @@ function findSliderAtTime(
 Get the circle/slider at a specific timestamp.
 
 ```ts
-export function filterHitObjectsInPeriod(
+function filterHitObjectsInPeriod(
 	startTime: number,
 	endTime: number,
 	hitobjects: HitObjects,
