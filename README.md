@@ -15,8 +15,8 @@ const { sliders, circles } = loadBeatmapHitobjects('path/to/osu/file')
 
 circles.forEach((circle) => {
 	createSprite('ring.png', Layer.Background, Origin.Centre, circle.position, () => {
-		fade([circle.startTime, circle.startTime + 100], 1, 0)
-		scale([circle.startTime, circle.startTime + 100], 0, 1)
+		fade([circle.time, circle.time + 100], 1, 0)
+		scale([circle.time, circle.time + 100], 0, 1)
 	})
 })
 
