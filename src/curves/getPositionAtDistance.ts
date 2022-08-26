@@ -4,6 +4,7 @@ import { Segment } from 'types/Segment'
 
 export function getPositionAtDistance(distance: OsuPixel, segments: Segment[]): Vector2 {
 	if (distance >= segments[segments.length - 1].distance) return segments[segments.length - 1].position
+	if (distance <= segments[0].distance) return segments[0].position
 
 	const nextSegmentIndex = segments.findIndex((segment) => segment.distance > distance)
 	const { distance: nextDistance, position: nextPosition } = segments[nextSegmentIndex]

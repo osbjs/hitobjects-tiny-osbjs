@@ -15,10 +15,9 @@ export function createBezierSegmentGroup(points: Vector2[], visualLength: OsuPix
 		if (areEqualVecs(currentPoint, prevPoint)) {
 			if (_points.length > 1) curves.push(createBezierSegments(_points, visualLength))
 			_points = []
-		} else {
-			_points.push(cloneVec(currentPoint))
 		}
 
+		_points.push(cloneVec(currentPoint))
 		prevPoint = currentPoint
 	})
 
