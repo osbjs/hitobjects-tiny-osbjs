@@ -1,6 +1,8 @@
 # hitobjects-tiny-osbjs
 Hit objects parser for tiny-osbjs. This plugin only parses time and position needed to create hit objects highlight effect.
 
+## WARNING: This library is broken at the moment. A fix is coming its way.
+
 ## Install
 ```bash
 npm i @osbjs/tiny-osbjs @osbjs/hitobjects-tiny-osbjs
