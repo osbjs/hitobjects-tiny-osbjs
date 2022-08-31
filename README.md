@@ -7,7 +7,6 @@ npm i @osbjs/tiny-osbjs @osbjs/hitobjects-tiny-osbjs
 ```
 
 ## Usage
-Note that this plugin does not handle the case where you manually edit the osu file so it might return unexpected result for that case.
 ```js
 import { loadBeatmapHitobjects } from '@osbjs/hitobjects-tiny-osbjs'
 
