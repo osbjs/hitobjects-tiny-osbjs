@@ -7,7 +7,7 @@ export function getBezierGroupPositionAtDistance(distance: OsuPixel, curves: Seg
 	let _distance = distance
 	for (let i = 0; i < curves.length; i++) {
 		const segments = curves[i]
-		if (distance < segments[segments.length - 1].distance) return getPositionAtDistance(_distance, segments)
+		if (_distance < segments[segments.length - 1].distance) return getPositionAtDistance(_distance, segments)
 
 		_distance -= segments[segments.length - 1].distance
 	}

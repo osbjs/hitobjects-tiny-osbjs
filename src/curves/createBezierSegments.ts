@@ -12,8 +12,8 @@ export function createBezierSegments(points: Vector2[], visualLength: OsuPixel):
 	let distance = 0
 	let prevPosition = startPoint
 
-	for (let i = 1; i <= segmentCount; ++i) {
-		let delta = i / (segmentCount + 1)
+	for (let i = 1; i <= segmentCount; i++) {
+		let delta = i / segmentCount
 		let nextPosition = getPositionAtDelta(delta, points)
 
 		distance += lengthVec(subVec(nextPosition, prevPosition))
@@ -30,8 +30,9 @@ export function createBezierSegments(points: Vector2[], visualLength: OsuPixel):
 	return segments
 }
 
+// de_casteljau algorithm
 function getPositionAtDelta(delta: number, points: Vector2[]): Vector2 {
-	let intermediatePoints = points.map((point): Vector2 => cloneVec(point))
+	let intermediatePoints = points.map((point) => cloneVec(point))
 
 	for (let i = 1; i < points.length; i++)
 		for (let j = 0; j < points.length - i; j++) {

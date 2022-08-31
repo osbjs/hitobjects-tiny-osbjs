@@ -8,6 +8,7 @@ import { getBezierGroupPositionAtDistance } from 'curves/getBezierGroupPositionA
 import { getPositionAtDistance } from 'curves/getPositionAtDistance'
 import { CurveType } from 'types/CurveType'
 import { OsuPixel } from 'types/OsuPixel'
+import { Segment } from 'types/Segment'
 import { Slider } from 'types/Slider'
 
 export function createSlider(
@@ -27,6 +28,15 @@ export function createSlider(
 
 	const endTime = startTime + travelDuration * repeatCount
 
+	const segments =
+		curveType == CurveType.Bezier
+			? createBezierSegmentGroup(points, visualLength)
+			: curveType == CurveType.Catmull
+			? createCatmulSegments(points, visualLength)
+			: curveType == CurveType.Perfect
+			? createCircleSegments(points)
+			: createLineSegments(points, visualLength)
+
 	return {
 		startTime,
 		endTime,
@@ -42,16 +52,12 @@ export function createSlider(
 				repeatAtTime++
 			}
 
-			const progress = repeatAtTime % 2 == 0 ? progressDuration / travelDuration : 1 - progressDuration / travelDuration
+			const progress = repeatAtTime % 2 != 0 ? progressDuration / travelDuration : 1 - progressDuration / travelDuration
 
 			if (curveType == CurveType.Bezier) {
-				return getBezierGroupPositionAtDistance(visualLength * progress, createBezierSegmentGroup(points, visualLength))
-			} else if (curveType == CurveType.Catmull) {
-				return getPositionAtDistance(visualLength * progress, createCatmulSegments(points, visualLength))
-			} else if (curveType == CurveType.Perfect) {
-				return getPositionAtDistance(visualLength * progress, createCircleSegments(points))
+				return getBezierGroupPositionAtDistance(visualLength * progress, segments as Segment[][])
 			} else {
-				return getPositionAtDistance(visualLength * progress, createLineSegments(points, visualLength))
+				return getPositionAtDistance(visualLength * progress, segments as Segment[])
 			}
 		},
 	}

@@ -1,6 +1,6 @@
 {
 	"name": "@osbjs/hitobjects-tiny-osbjs",
-	"version": "1.3.1",
+	"version": "1.5.0",
 	"description": "Hit objects parser for tiny-osbjs.",
 	"main": "dist/cjs/index.js",
 	"module": "dist/es/index.js",
@@ -25,11 +25,11 @@
 	"author": "Nanachi",
 	"license": "MIT",
 	"peerDependencies": {
-		"@osbjs/tiny-osbjs": "^3.0.0"
+		"@osbjs/tiny-osbjs": "^3.1.7"
 	},
 	"devDependencies": {
 		"@types/node": "18.0.6",
-		"@osbjs/tiny-osbjs": "^3.0.0",
+		"@osbjs/tiny-osbjs": "^3.1.7",
 		"prettier": "^2.7.1",
 		"prettier-plugin-organize-imports": "^3.0.0",
 		"rollup": "^2.75.7",
